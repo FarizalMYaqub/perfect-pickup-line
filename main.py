@@ -36,6 +36,10 @@ def validate(text):
         sys.exit("error: line must be a single line")
     if not text.endswith("."):
         sys.exit("error: line must end with a full stop")
+    if "?" not in text:
+        sys.exit("error: line must ask the other agent a question")
+    if "  " in text:
+        sys.exit("error: line must not contain double spaces")
     return text
 
 
